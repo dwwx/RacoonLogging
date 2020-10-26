@@ -20,6 +20,5 @@ public class AsyncLogging {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 }

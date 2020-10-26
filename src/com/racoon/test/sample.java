@@ -1,11 +1,17 @@
 package com.racoon.test;
 
 import com.racoon.backend.AsyncLogging;
+import com.racoon.events.SubstituteLoggingEvent;
 import com.racoon.fronted.Logging;
+import com.racoon.interfaces.RLogger;
+import com.racoon.interfaces.RLoggerFactory;
 import com.racoon.util.BaseBuffer;
 import com.racoon.util.FileUtil;
 
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class sample {
+    private static final  RLogger logger = RLoggerFactory.getLogger(sample.class);
     public static void main(String[] args) {
         String fileName = "E:/project/learning/log.txt";
         try{
@@ -36,6 +42,8 @@ public class sample {
             thread2.join();
             //当两个线程执行完毕之后就关闭文件描述符
             fileUtil.close();
+            logger.debug("aaaa");
+            System.out.println(logger.getName());
         }catch (Exception e){
             e.printStackTrace();
         }
