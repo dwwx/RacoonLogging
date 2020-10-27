@@ -21,7 +21,10 @@ public class FileUtil {
         //注意关闭的先后顺序
         bw.close();
         fw.close();
-
+    }
+    public void flush() throws IOException {
+        fw.flush();
+        bw.flush();
     }
     public void append(String log)  {
         String dateTime = new Date().toString();
@@ -31,6 +34,5 @@ public class FileUtil {
         }catch (IOException e){
             e.printStackTrace();
         }
-
     }
 }

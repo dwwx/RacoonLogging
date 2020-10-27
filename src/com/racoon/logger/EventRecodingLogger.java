@@ -63,5 +63,6 @@ public class EventRecodingLogger implements RLogger {
         loggingEvent.setThrowable(throwable);
 
         eventQueue.add(loggingEvent);
+        System.out.println(eventQueue.size());
     }
 }
